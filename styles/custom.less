@@ -1,0 +1,54 @@
+// Variables
+@primary-color: #007BFF;
+@secondary-color: #0056b3;
+@shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+// Mixins
+.box-shadow(@shadowValue) {
+    box-shadow: @shadowValue;
+}
+
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 20px;
+    font-size: 18px;
+}
+
+.container {
+    .box-shadow(@shadow);  // Use mixin here
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+header, footer, section {
+    margin-bottom: 22px;
+}
+
+header, footer {
+    background-color: #6c757d;
+    color: #fff;
+    text-align: center;
+    .box-shadow(@shadow); // Use mixin here
+}
+
+/* ... Rest of the styles ... */
+
+a {
+    color: @primary-color; // Use variable here
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover { // Nested selector for hover state
+        color: @secondary-color; // Use variable here
+        text-decoration: underline;
+    }
+}
+
+/* ... Rest of the styles ... */
