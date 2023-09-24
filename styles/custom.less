@@ -1,9 +1,7 @@
-// Variables
 @primary-color: #007BFF;
 @secondary-color: #0056b3;
 @shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
-// Mixins
 .box-shadow(@shadowValue) {
     box-shadow: @shadowValue;
 }
@@ -18,7 +16,7 @@ body {
 }
 
 .container {
-    .box-shadow(@shadow);  // Use mixin here
+    .box-shadow(@shadow);
     margin: 0 auto;
     padding: 20px;
     max-width: 1200px;
@@ -35,20 +33,23 @@ header, footer {
     background-color: #6c757d;
     color: #fff;
     text-align: center;
-    .box-shadow(@shadow); // Use mixin here
+    .box-shadow(@shadow);
 }
 
-/* ... Rest of the styles ... */
-
 a {
-    color: @primary-color; // Use variable here
+    color: @primary-color;
     text-decoration: none;
     transition: color 0.3s;
 
-    &:hover { // Nested selector for hover state
-        color: @secondary-color; // Use variable here
+    &:hover {
+        color: @secondary-color;
         text-decoration: underline;
     }
 }
 
-/* ... Rest of the styles ... */
+.headshot {
+    width: 50vh;
+    height: auto; 
+    display: block;
+    margin: 0 auto;
+}
